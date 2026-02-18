@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portafolio David Villaescusa Rumba - Estudiante de DAW, Ciberseguridad e IA"
+    />
+    <meta name="author" content="David Villaescusa Rumba" />
+    <meta
+      name="keywords"
+      content="portafolio, desarrollo web, DAW, ciberseguridad, inteligencia artificial, JavaScript, Java, Python"
+    />
+    <title>David Villaescusa Rumba | Portafolio</title>
+
+    <!-- Enlace al archivo de estilos -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Fuentes de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Cabecera con el logo y el menú de navegación -->
+    <header class="site-header">
+      <div class="container header-flex">
+        <a href="#" class="logo"
+          ><span class="logo-accent">{</span>DV<span class="logo-accent"
+            >}</span
+          ></a
+        >
+        <nav>
+          <ul class="nav-list">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#sobre-mi">Sobre Mí</a></li>
+            <li><a href="#portafolio">Portafolio</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Sección principal (Hero) con mi presentación y la terminal decorativa -->
+      <section id="inicio" class="hero">
+        <div class="container hero-flex">
+          <!-- Texto de presentación -->
+          <div class="hero-text">
+            <p class="hero-greeting">Hola, soy</p>
+            <h1 class="hero-name">David<br />Villaescusa</h1>
+            <p class="hero-subtitle">
+              Estudiante de <strong>DAW</strong> en PROMETEO · Máster en
+              <strong>Ciberseguridad</strong> · Especialista en
+              <strong>IA</strong> en Racks Academy
+            </p>
+            <p class="hero-desc">
+              Apasionado por la tecnología, la seguridad informática y la
+              inteligencia artificial. Construyendo proyectos que conectan
+              desarrollo y ciberseguridad.
+            </p>
+            <div class="hero-buttons">
+              <a href="#portafolio" class="btn btn-primary">Ver proyectos</a>
+              <a
+                href="https://github.com/Davidrumbaa"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-outline"
+                >GitHub</a
+              >
+              <a
+                href="https://www.linkedin.com/in/david-villaescusa-rumba-861bb1336/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-outline"
+                >LinkedIn</a
+              >
+            </div>
+          </div>
+
+          <!-- Terminal decorativa que simula un JSON con mis datos -->
+          <div class="hero-terminal">
+            <div class="terminal-bar">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <pre
+              class="terminal-code"
+            ><code><span class="t-prompt">$</span> <span class="t-cmd">cat</span> sobre_mi.json
+
+{
+  <span class="t-key">"nombre"</span>: <span class="t-str">"David Villaescusa"</span>,
+  <span class="t-key">"ubicación"</span>: <span class="t-str">"España"</span>,
+  <span class="t-key">"formación"</span>: [
+    <span class="t-str">"DAW - PROMETEO"</span>,
+    <span class="t-str">"Máster Ciberseguridad"</span>,
+    <span class="t-str">"Especialista IA"</span>
+  ],
+  <span class="t-key">"intereses"</span>: [
+    <span class="t-str">"F1"</span>, <span class="t-str">"Cine"</span>, <span class="t-str">"Calistenia"</span>
+  ]
+}
+<span class="t-prompt">$</span> <span class="t-cursor">_</span></code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección Sobre Mí con información personal y las tecnologías que uso -->
+      <section id="sobre-mi" class="about">
+        <div class="container">
+          <h2 class="section-title">Sobre Mí</h2>
+          <div class="about-flex">
+            <!-- Texto sobre mí y mis intereses -->
+            <div class="about-text">
+              <p>
+                Soy <strong>David Villaescusa Rumba</strong>, estudiante de
+                <strong>Desarrollo de Aplicaciones Web (DAW)</strong> en
+                PROMETEO. Amplío mi formación con un máster en
+                <strong>Ciberseguridad</strong> y una especialización como
+                <strong>Especialista en Inteligencia Artificial</strong> en
+                Racks Academy.
+              </p>
+              <p>
+                Me apasiona la tecnología, el desarrollo y la seguridad. Fuera
+                del código soy fan de la <strong>Fórmula 1</strong>, disfruto
+                del <strong>cine</strong>, practico
+                <strong>calistenia</strong> y me gusta el gaming.
+              </p>
+
+              <!-- Chips con mis intereses -->
+              <div class="chips">
+                <span class="chip">Fórmula 1</span>
+                <span class="chip">Cine</span>
+                <span class="chip">Calistenia</span>
+                <span class="chip">Gaming</span>
+                <span class="chip">Ciberseguridad</span>
+                <span class="chip">IA</span>
+              </div>
+            </div>
+
+            <!-- Stack tecnológico con iconos reales de cada tecnología -->
+            <div class="about-skills">
+              <h3 class="skills-heading">Stack Tecnológico</h3>
+
+              <!-- Tecnologías que ya manejo -->
+              <h4 class="skills-label">Tecnologías que manejo</h4>
+              <div class="skills-grid">
+                <div class="skill-card">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                    alt="JavaScript"
+                  />
+                  <span>JavaScript</span>
+                </div>
+                <div class="skill-card">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                    alt="Java"
+                  />
+                  <span>Java</span>
+                </div>
+                <div class="skill-card">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                    alt="Python"
+                  />
+                  <span>Python</span>
+                </div>
+                <div class="skill-card">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                    alt="HTML5"
+                  />
+                  <span>HTML5</span>
+                </div>
+                <div class="skill-card">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                    alt="CSS3"
+                  />
+                  <span>CSS3</span>
+                </div>
+                <div class="skill-card">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                    alt="Git"
+                  />
+                  <span>Git</span>
+                </div>
+                <div class="skill-card">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                    alt="Node.js"
+                  />
+                  <span>Node.js</span>
+                </div>
+                <div class="skill-card">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                    alt="MySQL"
+                  />
+                  <span>MySQL</span>
+                </div>
+                <div class="skill-card">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                    alt="MongoDB"
+                  />
+                  <span>MongoDB</span>
+                </div>
+                <div class="skill-card">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+                    alt="PostgreSQL"
+                  />
+                  <span>PostgreSQL</span>
+                </div>
+              </div>
+
+              <!-- Tecnologías que quiero aprender en el futuro -->
+              <h4 class="skills-label">Quiero aprender</h4>
+              <div class="skills-grid">
+                <div class="skill-card skill-card--future">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                    alt="React"
+                  />
+                  <span>React</span>
+                </div>
+                <div class="skill-card skill-card--future">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"
+                    alt="Vue.js"
+                  />
+                  <span>Vue.js</span>
+                </div>
+                <div class="skill-card skill-card--future">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg"
+                    alt="Arduino"
+                  />
+                  <span>Arduino</span>
+                </div>
+                <div class="skill-card skill-card--future">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg"
+                    alt="Raspberry Pi"
+                  />
+                  <span>Raspberry Pi</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección Portafolio con los proyectos en una cuadrícula -->
+      <section id="portafolio" class="portfolio">
+        <div class="container">
+          <h2 class="section-title">Portafolio</h2>
+          <p class="section-subtitle">
+            Proyectos desarrollados durante mi formación
+          </p>
+          <div class="projects-grid">
+            <!-- Proyecto 1 -->
+            <article class="project-card">
+              <div class="project-img">
+                <img
+                  src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop"
+                  alt="Escáner de vulnerabilidades web con interfaz de terminal"
+                />
+              </div>
+              <div class="project-info">
+                <h3>Escáner de Vulnerabilidades Web</h3>
+                <p>
+                  Herramienta en Python que analiza sitios web en busca de
+                  vulnerabilidades comunes (XSS, SQL Injection) con informes
+                  automatizados.
+                </p>
+                <div class="tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">Ciberseguridad</span>
+                  <span class="tag">CLI</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Proyecto 2 -->
+            <article class="project-card">
+              <div class="project-img">
+                <img
+                  src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop"
+                  alt="Landing Page responsive con diseño moderno"
+                />
+              </div>
+              <div class="project-info">
+                <h3>Landing Page Responsive</h3>
+                <p>
+                  Página web responsive con HTML semántico y CSS, utilizando
+                  Flexbox y Grid para la maquetación.
+                </p>
+                <div class="tags">
+                  <span class="tag">HTML</span>
+                  <span class="tag">CSS</span>
+                  <span class="tag">Responsive</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Proyecto 3 -->
+            <article class="project-card">
+              <div class="project-img">
+                <img
+                  src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop"
+                  alt="Clasificador de emails con inteligencia artificial"
+                />
+              </div>
+              <div class="project-info">
+                <h3>Clasificador de Emails con IA</h3>
+                <p>
+                  Modelo de machine learning que clasifica correos como spam o
+                  legítimos, aplicando IA a un problema de ciberseguridad.
+                </p>
+                <div class="tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">IA</span>
+                  <span class="tag">Scikit-learn</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Proyecto 4 -->
+            <article class="project-card">
+              <div class="project-img">
+                <img
+                  src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop"
+                  alt="Aplicación de gestión de tareas"
+                />
+              </div>
+              <div class="project-info">
+                <h3>Gestor de Tareas Full Stack</h3>
+                <p>
+                  Aplicación CRUD con Node.js y MongoDB para gestionar tareas.
+                  Interfaz con diseño responsive.
+                </p>
+                <div class="tags">
+                  <span class="tag">Node.js</span>
+                  <span class="tag">MongoDB</span>
+                  <span class="tag">JavaScript</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección de contacto con formulario -->
+      <section id="contacto" class="contact">
+        <div class="container">
+          <h2 class="section-title">Contacto</h2>
+          <p class="section-subtitle">
+            ¿Tienes una idea o propuesta? Escríbeme.
+          </p>
+
+          <!-- El formulario no envía datos realmente, solo muestra un mensaje de éxito -->
+          <form
+            class="contact-form"
+            onsubmit="
+              event.preventDefault();
+              this.classList.add('form-sent');
+            "
+          >
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                placeholder="Tu nombre"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="tu@email.com"
+                required
+              />
+            </div>
+            <div class="form-group form-full">
+              <label for="mensaje">Mensaje</label>
+              <textarea
+                id="mensaje"
+                name="mensaje"
+                rows="5"
+                placeholder="Cuéntame tu idea..."
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              Enviar mensaje &rarr;
+            </button>
+            <div class="form-success">
+              <p>&#10003; ¡Mensaje enviado! Te responderé lo antes posible.</p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Pie de página con redes sociales -->
+    <footer class="site-footer">
+      <div class="container footer-center">
+        <a href="#" class="logo"
+          ><span class="logo-accent">{</span>DV<span class="logo-accent"
+            >}</span
+          ></a
+        >
+        <p class="footer-tagline">Estudiante de DAW · Ciberseguridad · IA</p>
+        <div class="footer-social">
+          <a
+            href="https://github.com/Davidrumbaa"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            >GitHub</a
+          >
+          <span>·</span>
+          <a
+            href="https://www.linkedin.com/in/david-villaescusa-rumba-861bb1336/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            >LinkedIn</a
+          >
+          <span>·</span>
+          <a
+            href="https://boxd.it/7ThUT"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Letterboxd"
+            >Letterboxd</a
+          >
+        </div>
+        <p class="footer-copy">
+          &copy; 2025 David Villaescusa Rumba. Todos los derechos reservados.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

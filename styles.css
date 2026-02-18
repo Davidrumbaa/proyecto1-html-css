@@ -1,0 +1,752 @@
+/* -- Reset para quitar los estilos por defecto del navegador -- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+}
+button,
+input,
+textarea {
+  font: inherit;
+  border: none;
+  outline: none;
+}
+
+/* -- Variables para reutilizar colores, fuentes, etc. -- */
+:root {
+  /* Colores del tema oscuro */
+  --bg: #0b0d11;
+  --bg-alt: #0f1117;
+  --surface: #151820;
+  --border: #21252e;
+  --text: #c9cdd6;
+  --text-bright: #eaedf3;
+  --text-muted: #6b7280;
+  --accent: #e8553d;
+  --accent-hover: #f06e58;
+  --green: #4ade80;
+  --teal: #2dd4bf;
+  --amber: #f59e0b;
+  --sky: #38bdf8;
+
+  /* Fuentes */
+  --font: "Outfit", sans-serif;
+  --mono: "JetBrains Mono", monospace;
+
+  /* Radio de bordes */
+  --radius: 10px;
+}
+
+/* -- Estilos generales del body y contenedor -- */
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Título y subtítulo que se repiten en varias secciones */
+.section-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-bright);
+  text-align: center;
+  margin-bottom: 0.4rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+}
+
+/* Header y navegación */
+
+/* Header fijo arriba con fondo semitransparente y blur */
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(11, 13, 17, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Uso flexbox para poner el logo a la izquierda y el nav a la derecha */
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+
+.logo {
+  font-family: var(--mono);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-bright);
+}
+
+.logo-accent {
+  color: var(--accent);
+}
+
+/* Los enlaces del menú van en fila con flexbox */
+.nav-list {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-list a {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+
+.nav-list a:hover {
+  color: var(--text-bright);
+}
+
+/* Sección Hero */
+
+.hero {
+  min-height: 100vh;
+}
+
+/* Flexbox para colocar el texto a la izquierda y la terminal a la derecha */
+.hero-flex {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  min-height: 100vh;
+  padding-top: 5rem;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1 1 420px;
+}
+
+.hero-greeting {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+
+/* El nombre grande con clamp para que se adapte al tamaño de pantalla */
+.hero-name {
+  font-size: clamp(2.8rem, 5.5vw, 4rem);
+  font-weight: 800;
+  color: var(--text-bright);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+}
+
+.hero-subtitle strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.hero-desc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+/* Botones del hero en fila con flexbox */
+.hero-buttons {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+/* Estilos base de los botones (se usa en todo el sitio) */
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.25s;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  box-shadow: 0 4px 20px rgba(232, 85, 61, 0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+.btn-outline:hover {
+  color: var(--text-bright);
+  border-color: var(--text-muted);
+}
+
+/* Terminal decorativa que simula una consola */
+.hero-terminal {
+  flex: 1 1 360px;
+  max-width: 460px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Barra superior de la terminal con los tres puntos de colores */
+.terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0.6rem 1rem;
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--border);
+}
+
+.dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+.dot-red {
+  background: #ef4444;
+}
+.dot-yellow {
+  background: #facc15;
+}
+.dot-green {
+  background: #22c55e;
+}
+
+/* Código dentro de la terminal */
+.terminal-code {
+  padding: 1.2rem;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  line-height: 1.75;
+  overflow-x: auto;
+}
+
+/* Colores de la sintaxis del JSON */
+.t-prompt {
+  color: var(--green);
+  font-weight: 700;
+}
+.t-cmd {
+  color: var(--sky);
+}
+.t-key {
+  color: var(--teal);
+}
+.t-str {
+  color: var(--amber);
+}
+
+/* Cursor parpadeante con animación */
+.t-cursor {
+  animation: blink 1s step-end infinite;
+  color: var(--text-bright);
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Sección Sobre Mí */
+
+.about {
+  padding: 5rem 0;
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Flexbox para poner texto a la izquierda y skills a la derecha */
+.about-flex {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.about-text {
+  flex: 1 1 400px;
+}
+
+.about-text p {
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+  line-height: 1.75;
+}
+
+.about-text strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Chips de intereses (F1, Cine, etc.) */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1.2rem;
+}
+
+.chip {
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  background: rgba(232, 85, 61, 0.1);
+  color: var(--accent);
+  border: 1px solid rgba(232, 85, 61, 0.2);
+}
+
+/* Parte derecha con el stack tecnológico */
+.about-skills {
+  flex: 1 1 380px;
+}
+
+.skills-heading {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  margin-bottom: 1rem;
+}
+
+.skills-label {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+/* Grid para las tarjetas de tecnologías (columnas fijas de 85px) */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 85px);
+  gap: 0.5rem;
+}
+
+/* Cada tarjeta de tecnología */
+.skill-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.65rem 0.4rem;
+  text-align: center;
+  transition: all 0.25s;
+}
+
+.skill-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* Icono de la tecnología (viene de devicon CDN) */
+.skill-card img {
+  width: 28px;
+  height: 28px;
+  margin: 0 auto 4px;
+  object-fit: contain;
+}
+
+.skill-card span {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  display: block;
+}
+
+/* Las tarjetas de "quiero aprender" van con borde discontinuo y más tenues */
+.skill-card--future {
+  border-style: dashed;
+  opacity: 0.65;
+}
+
+.skill-card--future:hover {
+  opacity: 1;
+}
+
+/* Sección Portafolio (Grid de proyectos) */
+
+.portfolio {
+  padding: 5rem 0;
+}
+
+/* Grid de 2 columnas para mostrar los 4 proyectos */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+}
+
+/* Tarjeta de cada proyecto */
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Imagen del proyecto con altura fija y object-fit para que no se deforme */
+.project-img {
+  height: 200px;
+  overflow: hidden;
+}
+
+.project-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+/* Efecto zoom en la imagen al pasar el ratón */
+.project-card:hover .project-img img {
+  transform: scale(1.05);
+}
+
+.project-info {
+  padding: 1.2rem;
+}
+
+.project-info h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  margin-bottom: 0.4rem;
+}
+
+.project-info p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+  line-height: 1.55;
+}
+
+/* Tags de tecnología de cada proyecto (flexbox en fila) */
+.tags {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  padding: 0.2rem 0.55rem;
+  background: var(--bg);
+  color: var(--text-muted);
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+/* Sección Contacto (formulario) */
+
+.contact {
+  padding: 5rem 0;
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border);
+}
+
+/* Formulario con grid de 2 columnas */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+/* Cada grupo de label + input va en columna con flexbox */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+/* El textarea ocupa las 2 columnas */
+.form-full {
+  grid-column: 1 / -1;
+}
+
+.contact-form label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.7rem 0.9rem;
+  color: var(--text);
+  font-size: 0.9rem;
+  transition: border-color 0.2s;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--text-muted);
+}
+
+/* Al hacer focus cambia el borde a color accent */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Botón de enviar ocupa todo el ancho */
+.contact-form .btn {
+  grid-column: 1 / -1;
+  justify-self: start;
+}
+
+/* Mensaje de éxito que aparece al enviar */
+.form-success {
+  grid-column: 1 / -1;
+  display: none;
+  padding: 0.8rem 1rem;
+  background: rgba(74, 222, 128, 0.08);
+  border: 1px solid rgba(74, 222, 128, 0.25);
+  border-radius: 8px;
+  color: var(--green);
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+/* Cuando se envía el form se añade la clase form-sent con JS */
+.form-sent .form-success {
+  display: block;
+}
+.form-sent .form-group,
+.form-sent .btn {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* Footer */
+
+.site-footer {
+  padding: 2.5rem 0 2rem;
+  border-top: 1px solid var(--border);
+}
+
+/* Footer centrado en columna con flexbox */
+.footer-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.footer-tagline {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Links de redes sociales en fila */
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.3rem;
+}
+
+.footer-social a {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.footer-social a:hover {
+  color: var(--accent);
+}
+
+.footer-social span {
+  color: var(--border);
+}
+
+.footer-copy {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  width: 100%;
+}
+
+/* Media queries */
+
+/* -- Pantallas medianas tipo tablet (hasta 900px) -- */
+@media (max-width: 900px) {
+  /* En tablet el hero pasa a ser vertical */
+  .hero-flex {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 6rem;
+    gap: 2rem;
+  }
+
+  .hero-desc {
+    max-width: 100%;
+  }
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  /* La terminal ocupa todo el ancho pero con un max-width */
+  .hero-terminal {
+    max-width: 420px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* El about también pasa a columna */
+  .about-flex {
+    flex-direction: column;
+  }
+  .chips {
+    justify-content: center;
+  }
+
+  /* Centrar todo el bloque de skills */
+  .about-skills {
+    text-align: center;
+  }
+  .skills-label {
+    text-align: center;
+  }
+  .skills-grid {
+    justify-content: center;
+    grid-template-columns: repeat(4, 85px);
+  }
+
+  /* Proyectos pasan a 1 columna */
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Formulario a 1 columna */
+  .contact-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* -- Pantallas pequeñas tipo móvil (hasta 480px) -- */
+@media (max-width: 480px) {
+  /* Reducir un poco el tamaño del nav */
+  .nav-list {
+    gap: 1rem;
+  }
+  .nav-list a {
+    font-size: 0.78rem;
+  }
+
+  /* Nombre más pequeño */
+  .hero-name {
+    font-size: 2.4rem;
+  }
+
+  /* Algo de espacio debajo de la terminal */
+  .hero-terminal {
+    margin-bottom: 1rem;
+  }
+
+  /* Botones en columna en móvil */
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  /* Skills en 3 columnas centradas */
+  .skills-grid {
+    grid-template-columns: repeat(3, 80px);
+  }
+
+  /* Terminal más pequeña */
+  .terminal-code {
+    font-size: 0.68rem;
+    padding: 0.8rem;
+  }
+}
